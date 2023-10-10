@@ -1,0 +1,41 @@
+<form>
+  <div [hidden]="ajout">
+    <label>ID</label>
+    <input
+      type="text"
+      [(ngModel)]="drugclass.idcl"
+      name="idDrugclass"
+      class="form-control w-25"
+    />
+  </div>
+  <div>
+    <label>Drug class</label>
+    <input
+      type="text"
+      [(ngModel)]="drugclass.name"
+      name="nameDrugclass"
+      class="form-control"
+      placeholder="Entrez un nom de catégorie..."
+    />
+  </div>
+  <div class="mt-2">
+    <button
+      type="submit"
+      [disabled]="!drugclass.name"
+      class="btn btn-success"
+      *ngIf="ajout"
+      (click)="saveDrugClass()"
+    >
+      Add
+    </button>
+    <button
+      type="submit"
+      [disabled]="!drugclass.name"
+      class="btn btn-success"
+      *ngIf="!ajout"
+      (click)="saveDrugClass()"
+    >
+      Modify
+    </button>
+  </div>
+</form>

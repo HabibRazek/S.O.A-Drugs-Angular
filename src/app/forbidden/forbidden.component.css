@@ -1,0 +1,50 @@
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  background-color: #27292d;
+  font-family: "Roboto Condensed";
+  text-transform: uppercase;
+  overflow: hidden;
+}
+
+.police-tape {
+  background-color: #5BF172;
+  background: linear-gradient(180deg,
+      lighten(#80fe13, 20%) 0%,
+      #5BF172 5%,
+      #5BF172 90%,
+      lighten(#80fe13, 5%) 95%,
+      darken(#80fe13, 50%) 100%);
+  padding: 0.125em;
+  font-size: 3em;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.police-tape--1 {
+  transform: rotate(10deg);
+  position: absolute;
+  top: 40%;
+  left: -5%;
+  right: -5%;
+  z-index: 2;
+  margin-top: 0;
+}
+
+.police-tape--2 {
+  transform: rotate(-8deg);
+  position: absolute;
+  top: 50%;
+  left: -5%;
+  right: -5%;
+}
+
+ba .ghost {
+  display: flex;
+  justify-content: stretch;
+  flex-direction: column;
+  height: 100vh;
+}

@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="card shadow mb-4">
+    <div class="card-body">
+      <div class="col-sm-4 col-md-4 col-lg-4 mb-4">
+        <app-update-drug-class
+          [drugclass]="updateddrugclass"
+          [ajout]="ajout"
+        ></app-update-drug-class>
+      </div>
+
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Drug Claass</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let d of drugclass">
+          <tr>
+            <td>{{ d.idcl }}</td>
+            <td>{{ d.name }}</td>
+            <td><a class="btn btn-success" (click)="update(d)">Modify</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

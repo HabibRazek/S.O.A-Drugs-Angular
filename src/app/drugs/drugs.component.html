@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="card shadow mb-4">
+    <div class="card-body">
+      <table class="table table-striped">
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Brand</th>
+          <th>Dosage</th>
+          <th>Drug Class</th>
+          <th>Last update</th>
+          <th>Image</th>
+        </tr>
+        <tbody *ngFor="let i of drugs">
+          <tr>
+            <td>{{ i.id }}</td>
+            <td>{{ i.genericName }}</td>
+            <td>{{ i.brandNames }}</td>
+            <td>{{ i.dosageForm }}</td>
+            <td>{{ i.drugClass.name}}</td>
+            <td>{{ i.lastUpdated | date : "dd/MM/yyyy" }}</td>
+            <td><img class="card-img-top img-responsive"
+              src = "{{i.imageStr}}"
+              style = "height :50px;width:100px">
+              </td>
+            <td>
+              <a
+                *ngIf="authService.isAdmin()"
+                class="btn btn-danger"
+                (click)="supprimerDrug(i.id)"
+                >Supprimer</a
+              >
+            </td>
+            <td>
+              <a
+                *ngIf="authService.isAdmin()"
+                class="btn btn-success"
+                [routerLink]="['/update-drug', i.id]"
+                >Modifier</a
+              >
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
